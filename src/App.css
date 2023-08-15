@@ -1,38 +1,173 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    /* ### Primary */
+    --Blue: hsl(223, 87%, 63%);
+    /* ### Secondary */
+    --Pale-Blue: hsl(223, 100%, 88%);
+    --Light-Red: hsl(354, 100%, 66%);
+    /* ### Neutral */
+    --Gray: hsl(0, 0%, 59%);
+    --Very-Dark-Blue: hsl(209, 33%, 12%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    min-height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+img {
+    width: 100%;
+    display: block;
 }
 
-.App-link {
-  color: #61dafb;
+#root {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+    width: min(95%, 640px);
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.logo {
+    width: 4rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.title {
+    margin-bottom: 1rem;
+    color: var(--Gray);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.title span {
+    color: #000;
+    font-weight: 700;
+}
+
+.text {
+    margin-bottom: 1.2rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.inputContainer {
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    border-radius: 3rem;
+    border: 1px solid var(--Pale-Blue);
+    padding: 1rem 2rem;
+    margin-bottom: 0.5rem;
+}
+
+input::placeholder {
+    color: hsl(0, 0%, 85%);
+    font-size: 1.2rem;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--Light-Red);
+}
+
+.isFocused {
+    outline: none;
+    border-color: var(--Light-Red);
+}
+
+.errorMessage {
+    color: var(--Light-Red);
+    font-size: 0.8rem;
+}
+
+.btnContainer {
+    width: 100%;
+}
+
+.btn {
+    border-radius: 3rem;
+    border: none;
+    background: var(--Blue);
+    color: var(--Pale-Blue);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 1rem;
+    box-shadow: 2px 2px 5px var(--Very-Dark-Blue);
+    width: 100%;
+}
+
+.illustration {
+    margin: 5rem 0;
+}
+
+.links {
+    margin: 6rem auto 2rem auto;
+}
+
+.icon {
+    margin-right: 2rem;
+    flex-direction: column;
+    font-size: 1.5rem;
+    color: var(--Blue);
+}
+
+@media (min-width: 768px) {
+    main {
+        padding: 4rem 0;
+    }
+    .title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .text {
+        margin-bottom: 1.5rem;
+    }
+    .form {
+        flex-direction: row;
+        gap: 0;
+    }
+    .inputContainer {
+        width: 68%;
+        margin-right: 0.5rem;
+        align-self: flex-start;
+    }
+    .input {
+        width: 100%;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1rem;
+    }
+    .errorMessage {
+        text-align: start;
+        margin-left: 1rem;
+    }
+    .btnContainer {
+        width: 30%;
+        align-self: flex-start;
+    }
+    .btn {
+        width: 100%;
+        padding: 1.2rem;
+    }
 }
